@@ -4,7 +4,10 @@ import com.fiap.ecr.api_marcacao_consultas.model.Usuario;
 import com.fiap.ecr.api_marcacao_consultas.repository.UsuarioRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
 import java.util.Optional;
 
 @Service
@@ -16,6 +19,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
+<<<<<<< HEAD
     public List<Usuario> listarUsuarios() {
         return usuarioRepository.findAll();
     }
@@ -39,6 +43,8 @@ public class UsuarioService {
         return usuarioRepository.findByTipo("MEDICO");
     }
 
+=======
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
     public Usuario salvarUsuario(Usuario usuario) {
         // Verifica se o e-mail já está cadastrado
         Optional<Usuario> usuarioExistente = usuarioRepository.findByEmail(usuario.getEmail());
@@ -51,6 +57,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
+<<<<<<< HEAD
     public Usuario atualizarUsuario(Long id, Usuario usuario) {
         Usuario usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
@@ -87,6 +94,8 @@ public class UsuarioService {
         usuarioRepository.deleteById(id);
     }
 
+=======
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
     public Usuario autenticar(String email, String senha) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
@@ -97,4 +106,8 @@ public class UsuarioService {
 
         return usuario;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2

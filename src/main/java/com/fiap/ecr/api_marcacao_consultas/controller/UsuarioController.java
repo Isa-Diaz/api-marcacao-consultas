@@ -8,9 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+=======
+import java.util.Map;
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
 
 @RestController
 @RequestMapping("/usuarios")
@@ -23,6 +27,7 @@ public class UsuarioController {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
+<<<<<<< HEAD
     @GetMapping
     public ResponseEntity<List<Usuario>> listarUsuarios() {
         List<Usuario> usuarios = usuarioService.listarUsuarios();
@@ -48,6 +53,8 @@ public class UsuarioController {
         return ResponseEntity.ok(medicos);
     }
 
+=======
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
     @PostMapping
     public ResponseEntity<?> criarUsuario(@RequestBody Usuario usuario) {
         try {
@@ -58,6 +65,7 @@ public class UsuarioController {
         }
     }
 
+<<<<<<< HEAD
     @PutMapping("/{id}")
     public ResponseEntity<?> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
         try {
@@ -78,6 +86,8 @@ public class UsuarioController {
         }
     }
 
+=======
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
@@ -88,4 +98,8 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2

@@ -25,6 +25,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+<<<<<<< HEAD
                                 "/usuarios/login",
                                 "/h2-console/**" // PERMITE ACESSO AO H2
                         ).permitAll()
@@ -34,6 +35,15 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 // resto da configuração permanece igual
+=======
+                                "/usuarios",
+                                "/usuarios/login",
+                                "/h2-console/**" // PERMITE ACESSO AO H2
+                        ).permitAll()
+                        .requestMatchers(HttpMethod.POST, "/consultas").authenticated()
+                        .anyRequest().authenticated()
+                )
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.disable())
                         .contentSecurityPolicy(csp -> csp
@@ -46,5 +56,9 @@ public class SecurityConfig {
 
         return http.build();
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 2135768f7e001f77c966dcaae5e81c96e22482d2
